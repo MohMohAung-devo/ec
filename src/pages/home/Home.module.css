@@ -1,0 +1,154 @@
+.Col1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.Col2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Col3 {
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 4rem;
+}
+
+.Col4 {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  margin-top: 4rem;
+  object-fit: contain;
+}
+.button {
+  width: 50px;
+  height: 50px;
+  left: 10px;
+  top: 50vh;
+  transform: translateY(-50%);
+  position: absolute;
+  background-color: #f3f1e5;
+  border-radius: 10px;
+  border-color: #f3f1e5;
+  color: #c0b283;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+.rightbutton {
+  width: 50px;
+  height: 50px;
+  right: 10px;
+  top: 50vh;
+  transform: translateY(-50%);
+  position: absolute;
+  background-color: #f3f1e5;
+  border-radius: 10px;
+  border-color: #f3f1e5;
+  color: #c0b283;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+.img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  background-size: contain;
+}
+
+.show {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+
+.hide {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.productCol1 {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.productCol2 {
+  width: 100%;
+  height: 100vh;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.productTitle {
+  margin-top: -10px;
+}
+.menuCol1 {
+  width: 20%;
+}
+
+.menuCol2 {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+.menuText {
+  font-size: 20px;
+}
+
+.productCol3 {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  gap: 2;
+}
+
+.productCol4 {
+  width: 370px;
+  height: 400px;
+  border: 1px solid;
+  justify-items: center;
+  gap: 2;
+  border-radius: 10px;
+  border-color: #c0b283;
+  box-shadow: 2px 2px 5px rgba(192, 178, 131, 0.8);
+}
+
+.productCol4:hover {
+  background-color: #f3f1e5;
+}
+
+.productImage {
+  width: 330px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.priceList {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.buttonBuy {
+  width: 100px;
+  height: 35px;
+  border-radius: 10px;
+  border-color: #c0b283;
+  box-shadow: 2px 2px 5px rgba(192, 178, 131, 0.8);
+}

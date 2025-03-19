@@ -1,0 +1,35 @@
+.Col1 {
+  width: 100%;
+  height: 70px;
+  background-color: #f3f1e5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+}
+
+.Col2 {
+  width: 75%;
+  margin: auto;
+  height: 100%;
+  /* color: #c0b283; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+
+.Col3 {
+}
+.textColor {
+  font-size: 24px;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: #c0b283;
+  font-weight: 800;
+  border-width: 20px;
+}
