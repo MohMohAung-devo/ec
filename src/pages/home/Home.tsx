@@ -4,13 +4,11 @@ import Photo1 from "../../assets/Photo1.jpg";
 import Photo2 from "../../assets/Photo2.jpg";
 import classes from "./Home.module.css";
 import Photo4 from "../../assets/photo6.jpg";
-
 import Photo5 from "../../assets/image1.jpg";
 import Photo6 from "../../assets/image10.jpg";
 import Photo7 from "../../assets/image11.jpg";
 import Photo8 from "../../assets/image12.jpg";
 import Photo9 from "../../assets/iamge9.jpg";
-
 import Photo10 from "../../assets/photo6.jpg";
 import Photo11 from "../../assets/photo7.jpg";
 import Photo12 from "../../assets/photo8.jpg";
@@ -25,13 +23,13 @@ const Home = () => {
   const sliderShow = [
     { img: Photo },
     { img: Photo1 },
+    { img: Photo7 },
+    { img: Photo8 },
+    { img: Photo9 },
     { img: Photo2 },
     { img: Photo4 },
     { img: Photo5 },
     { img: Photo6 },
-    { img: Photo7 },
-    { img: Photo8 },
-    { img: Photo9 },
   ];
 
   const handleNext = () => {
@@ -56,7 +54,6 @@ const Home = () => {
     { name: "Women Clothes", photo: Photo13, price: "1000" },
     { name: "Women Clothes", photo: Photo14, price: "1000" },
   ];
-
 
   return (
     <div className={classes.Col1}>
@@ -96,19 +93,13 @@ const Home = () => {
                       alt=""
                       className={classes.productImage}
                     />
-                  </Link>
-
-                  <div className={classes.priceList}>
-                    {" "}
-                    <p>Price - {item.price}Kyat</p>
-                    <button className={classes.buttonBuy}>Buy</button>
-                  </div>
+                  </Link>{" "}
+                  <p>Price - {item.price}Kyat</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
-
         <div className={classes.sliderCol1}>
           <div className={classes.sliderCol2}>
             {sliderShow.map((item, index) => (

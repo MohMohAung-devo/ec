@@ -52,6 +52,19 @@ const Contact = () => {
           </button>
         </form>
       </div>
+
+      <div className={classes.footerCol1}>
+        <div className={classes.footerCol2}>
+          <div>
+            <p>Email - mohmohaung737@gmail.com</p>
+            <p>Address - Pazadaung Township</p>
+          </div>
+          <div>
+            <p>Phone - 09259575377</p>
+            <p>Telegram - @NMO1997</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

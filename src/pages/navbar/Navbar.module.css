@@ -23,9 +23,12 @@
 }
 
 .Col3 {
+  width: 30%;
+  margin: auto;
 }
 
 .link {
+  width: 100%;
   text-decoration: none;
 }
 .textColor {
