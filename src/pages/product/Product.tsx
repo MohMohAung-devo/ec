@@ -11,6 +11,7 @@ import Photo9 from "../../assets/iamge9.jpg";
 import Photo10 from "../../assets/photo6.jpg";
 import Photo11 from "../../assets/photo7.jpg";
 import Photo12 from "../../assets/photo8.jpg";
+import { count } from "console";
 
 interface producttype {
   id: number;
@@ -26,6 +27,8 @@ interface menuType {
 export const Product = () => {
   const [show, setShow] = useState<string>("All Items");
   const [activeColor, setActiveColor] = useState(false);
+  const [count, setCount] = useState(0);
+  const [selectedId, setselectedId] = useState<number[]>([]);
   const sliderShow = [
     { img: Photo },
     { img: Photo1 },
@@ -118,6 +121,12 @@ export const Product = () => {
 
   console.log("filterProduct", filterProductItem);
 
+  const handleCount = (index: number) => {
+    setCount(count + 1);
+    setselectedId((prv) => [...prv, index]);
+    console.log("id number ", index);
+  };
+
   return (
     <div className={classes.productCol1}>
       <div className={classes.productCol2}>
@@ -140,6 +149,10 @@ export const Product = () => {
                 </div>
               ))}
             </div>
+            <div className={classes.cartContainer}>
+              <button className={classes.button}>Cart</button>
+              <p className={classes.count}>{count}</p>
+            </div>
           </div>
           <div className={classes.productCol7}>
             {filterProductItem.map((item, index) => (
@@ -147,7 +160,12 @@ export const Product = () => {
                 <div className={classes.addContainer}>
                   {" "}
                   <p>{item.name}</p>
-                  <button className={classes.buttonAdd}>Add</button>
+                  <button
+                    className={classes.buttonAdd}
+                    onClick={() => handleCount(index)}
+                  >
+                    Add
+                  </button>
                 </div>
 
                 <img
@@ -179,7 +197,7 @@ export const Product = () => {
         </div>
       </div>
 
-      {/* <div className={classes.sliderCol1}>
+      <div className={classes.sliderCol1}>
         <h2>Popular Item</h2>
         <div className={classes.sliderCol2}>
           {sliderShow.map((item) => (
@@ -188,7 +206,7 @@ export const Product = () => {
             </div>
           ))}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

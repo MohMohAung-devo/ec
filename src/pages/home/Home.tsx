@@ -62,7 +62,13 @@ const Home = () => {
           <button className={classes.button} onClick={handleNext}>
             Next
           </button>
-          <div style={{ display: "flex", width: "100%", height: "100%" }}>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              height: "100%",
+            }}
+          >
             {imageShow.map((item, index) => (
               <div className={classes.Col4} key={index}>
                 <img
@@ -72,6 +78,7 @@ const Home = () => {
                     index === currentIndex ? classes.show : classes.hide
                   }`}
                   key={index}
+                  style={{ width: "100%", height: "100%" }}
                 />
               </div>
             ))}
@@ -82,7 +89,7 @@ const Home = () => {
         </div>
         <div className={classes.productCol1}>
           <div className={classes.productCol2}>
-            <h2>Product</h2>
+            <h2 className={classes.productTitle}>Product</h2>
             <div className={classes.productCol3}>
               {productList.map((item) => (
                 <div className={classes.productCol4}>
