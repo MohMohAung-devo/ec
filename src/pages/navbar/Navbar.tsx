@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import classes from "./Navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const [activeColor, setActiveColor] = useState(0);
+  const [activeColor, setActiveColor] = useState("");
+  const location = useLocation();
   const menu = [
     { name: "home", link: "/" },
     { name: "product", link: "/product" },
@@ -11,8 +12,8 @@ const Navbar = () => {
     { name: "profile", link: "/profile" },
   ];
 
-  const handleActive = (index: number) => {
-    setActiveColor(index);
+  const handleActive = (link: string) => {
+    setActiveColor(link);
   };
   return (
     <div className={classes.Col1}>
@@ -21,10 +22,13 @@ const Navbar = () => {
           <div className={classes.Col3} key={index}>
             <Link
               to={item.link}
-              onClick={() => handleActive(index)}
+              onClick={() => handleActive(item.link)}
               className={`${classes.link}${
-                activeColor === index ? classes.active : ""
+                location.pathname === item.link ? classes.active : ""
               }`}
+              style={{
+                borderColor: activeColor === item.link ? "#c0b283" : "",
+              }}
             >
               <p className={classes.textColor}>{item.name}</p>
             </Link>

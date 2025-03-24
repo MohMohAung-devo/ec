@@ -11,8 +11,8 @@ import Photo9 from "../../assets/iamge9.jpg";
 import Photo10 from "../../assets/photo6.jpg";
 import Photo11 from "../../assets/photo7.jpg";
 import Photo12 from "../../assets/photo8.jpg";
-import { count } from "console";
 import { Link } from "react-router-dom";
+import { FaRegStar } from "react-icons/fa6";
 
 interface producttype {
   id: number;
@@ -20,6 +20,8 @@ interface producttype {
   category: string;
   photo: string;
   price: string;
+  ratingIcon: JSX.Element;
+  ratingCount: number;
 }
 
 interface menuType {
@@ -27,22 +29,22 @@ interface menuType {
 }
 export const Product = () => {
   const [show, setShow] = useState<string>("All Items");
-  const [activeColor, setActiveColor] = useState(false);
   const [count, setCount] = useState(0);
   const [selectedId, setselectedId] = useState<number[]>([]);
+  const [activeRating, setActivedRating] = useState<number[]>([]);
+
   const sliderShow = [
     { img: Photo },
     { img: Photo1 },
     { img: Photo2 },
-
     { img: Photo5 },
     { img: Photo6 },
     { img: Photo7 },
     { img: Photo8 },
     { img: Photo9 },
     { img: Photo10 },
-    { img: Photo11 },
-    { img: Photo12 },
+    // { img: Photo11 },
+    // { img: Photo12 },
   ];
 
   const menuList: menuType[] = [
@@ -61,6 +63,8 @@ export const Product = () => {
       category: "Women Clothes",
       photo: Photo,
       price: "1000",
+      ratingIcon: <FaRegStar />,
+      ratingCount: 0,
     },
     {
       id: 2,
@@ -68,6 +72,8 @@ export const Product = () => {
       category: "Women Clothes",
       photo: Photo1,
       price: "1000",
+      ratingIcon: <FaRegStar />,
+      ratingCount: 0,
     },
     {
       id: 3,
@@ -75,6 +81,8 @@ export const Product = () => {
       category: "Men Clothes",
       photo: Photo2,
       price: "1000",
+      ratingIcon: <FaRegStar />,
+      ratingCount: 0,
     },
     {
       id: 4,
@@ -82,6 +90,8 @@ export const Product = () => {
       category: "Women Clothes",
       photo: Photo11,
       price: "1000",
+      ratingIcon: <FaRegStar />,
+      ratingCount: 0,
     },
     {
       id: 5,
@@ -89,6 +99,8 @@ export const Product = () => {
       category: "Boy Clothes",
       photo: Photo5,
       price: "1000",
+      ratingIcon: <FaRegStar />,
+      ratingCount: 0,
     },
     {
       id: 8,
@@ -96,6 +108,8 @@ export const Product = () => {
       category: "Women Clothes",
       photo: Photo6,
       price: "1000",
+      ratingIcon: <FaRegStar />,
+      ratingCount: 0,
     },
     {
       id: 6,
@@ -103,6 +117,8 @@ export const Product = () => {
       category: "Shoes",
       photo: Photo12,
       price: "1000",
+      ratingIcon: <FaRegStar />,
+      ratingCount: 0,
     },
     {
       id: 7,
@@ -110,23 +126,52 @@ export const Product = () => {
       category: "Food",
       photo: Photo10,
       price: "1000",
+      ratingIcon: <FaRegStar />,
+      ratingCount: 0,
     },
   ];
-
-  const handleActive = () => setActiveColor(!activeColor);
 
   const filterProductItem =
     show === "All Items"
       ? productList
       : productList.filter((item) => item.category === show);
 
-  console.log("filterProduct", filterProductItem);
+  const [product, setProducted] = useState([filterProductItem]);
 
   const handleCount = (index: number) => {
     setCount(count + 1);
     setselectedId((prv) => [...prv, index]);
     console.log("id number ", index);
   };
+
+  const handleRating = (index: number, id: number) => {
+    setselectedId(id);
+    setActivedRating((prv) => [...prv, index]);
+    console.log(selectedId, activeRating);
+  };
+
+  const startList = [
+    {
+      id: 1,
+      icon: <FaRegStar />,
+    },
+    {
+      id: 2,
+      icon: <FaRegStar />,
+    },
+    {
+      id: 3,
+      icon: <FaRegStar />,
+    },
+    {
+      id: 4,
+      icon: <FaRegStar />,
+    },
+    {
+      id: 5,
+      icon: <FaRegStar />,
+    },
+  ];
 
   return (
     <div className={classes.productCol1}>
@@ -142,7 +187,7 @@ export const Product = () => {
                     onClick={() => setShow(item.name)}
                     style={{ cursor: "pointer" }}
                     className={`${classes.menuText} ${
-                      show === item.name ? classes.sactive : ""
+                      show === item.name ? classes.active : ""
                     }`}
                   >
                     {item.name}
@@ -175,22 +220,21 @@ export const Product = () => {
                   src={item.photo}
                   alt=""
                   className={classes.img}
-                  style={{ width: "80%", height: "60%" }}
+                  style={{ width: "100%", height: "60%" }}
                 />
                 <div className={classes.priceList}>
-                  <p>P-{item.price}Kyat</p>
+                  <p>
+                    P-<span className={classes.price}>{item.price}</span>Kyat
+                  </p>
                   <div className={classes.ratingList}>
                     {" "}
                     <p>Rating</p>
                     <div className={classes.ratingContainer}>
-                      <div
-                        className={`${classes.rating} `}
-                        onClick={handleActive}
-                      ></div>
-                      <div className={classes.rating}></div>
-                      <div className={classes.rating}></div>
-                      <div className={classes.rating}></div>
-                      <div className={classes.rating}></div>
+                      {Array.from({ length: 5 }, (_, index) => (
+                        <div className={classes.rating}>
+                          <span>{item.ratingIcon}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

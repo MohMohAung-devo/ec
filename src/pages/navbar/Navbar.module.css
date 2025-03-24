@@ -33,8 +33,10 @@
 }
 
 .active {
-  border-bottom: 1px solid;
+  color: #c0b283; /* Active color */
+  border-bottom: 1px solid currentColor !important;
 }
+
 .textColor {
   font-size: 24px;
   text-transform: capitalize;
