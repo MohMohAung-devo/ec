@@ -12,6 +12,7 @@ import Photo10 from "../../assets/photo6.jpg";
 import Photo11 from "../../assets/photo7.jpg";
 import Photo12 from "../../assets/photo8.jpg";
 import { count } from "console";
+import { Link } from "react-router-dom";
 
 interface producttype {
   id: number;
@@ -141,7 +142,7 @@ export const Product = () => {
                     onClick={() => setShow(item.name)}
                     style={{ cursor: "pointer" }}
                     className={`${classes.menuText} ${
-                      show === item.name ? classes.active : ""
+                      show === item.name ? classes.sactive : ""
                     }`}
                   >
                     {item.name}
@@ -150,7 +151,9 @@ export const Product = () => {
               ))}
             </div>
             <div className={classes.cartContainer}>
-              <button className={classes.button}>Cart</button>
+              <Link to="/cart" className={classes.button}>
+                Cart
+              </Link>
               <p className={classes.count}>{count}</p>
             </div>
           </div>
