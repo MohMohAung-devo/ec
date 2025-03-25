@@ -43,8 +43,12 @@ export const Product = () => {
     { img: Photo8 },
     { img: Photo9 },
     { img: Photo10 },
-    // { img: Photo11 },
-    // { img: Photo12 },
+    { img: Photo11 },
+    { img: Photo12 },
+    { img: Photo2 },
+    { img: Photo5 },
+    { img: Photo6 },
+    { img: Photo7 },
   ];
 
   const menuList: menuType[] = [
@@ -196,7 +200,7 @@ export const Product = () => {
               ))}
             </div>
             <div className={classes.cartContainer}>
-              <Link to="/cart" className={classes.button}>
+              <Link to="/product/cart" className={classes.button}>
                 Cart
               </Link>
               <p className={classes.count}>{count}</p>
@@ -244,8 +248,17 @@ export const Product = () => {
         </div>
       </div>
 
-      <div className={classes.sliderCol1}>
+      <div
+        style={{
+          width: "100%",
+          height: "20px",
+          textAlign: "center",
+          marginTop: "2rem",
+        }}
+      >
         <h2>Popular Item</h2>
+      </div>
+      <div className={classes.sliderCol1}>
         <div className={classes.sliderCol2}>
           {sliderShow.map((item) => (
             <div className={classes.sliderCol3}>

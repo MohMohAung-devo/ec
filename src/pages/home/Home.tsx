@@ -30,6 +30,12 @@ const Home = () => {
     { img: Photo4 },
     { img: Photo5 },
     { img: Photo6 },
+    { img: Photo7 },
+    { img: Photo8 },
+    { img: Photo9 },
+    { img: Photo7 },
+    { img: Photo8 },
+    { img: Photo9 },
   ];
 
   const handleNext = () => {
@@ -108,6 +114,7 @@ const Home = () => {
           </div>
         </div>
         <div className={classes.sliderCol1}>
+          <p>Popular Item</p>
           <div className={classes.sliderCol2}>
             {sliderShow.map((item, index) => (
               <div className={classes.sliderCo3}>

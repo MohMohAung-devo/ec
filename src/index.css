@@ -71,7 +71,7 @@ button:focus-visible {
 body {
   width: 100%;
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
 }
 /* https://github.com/thebikashweb/easy-link-app/blob/master/server/package.json */
