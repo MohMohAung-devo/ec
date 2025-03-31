@@ -44,14 +44,22 @@
 }
 
 .productCol7 {
-  width: 70%;
+  /* width: 70%;
   margin: auto;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 380px);
   gap: 2;
   column-span: 1rem;
-  column-gap: 1rem;
+  column-gap: 1rem; */
+
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 0px;
+  column-gap: 0px;
+  gap: 1rem;
 }
 
 .cartContainer {
@@ -77,7 +85,7 @@
 }
 
 .productCol8 {
-  width: 300px;
+  width: 280px;
   height: 280px;
   border: 1px solid;
   border-radius: 10px;

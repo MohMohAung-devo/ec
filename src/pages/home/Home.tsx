@@ -14,7 +14,6 @@ import Photo11 from "../../assets/photo7.jpg";
 import Photo12 from "../../assets/photo8.jpg";
 import Photo13 from "../../assets/photo9.jpg";
 import Photo14 from "../../assets/image11.jpg";
-import Photo15 from "../../assets/iamge9.jpg";
 import { Link } from "react-router-dom";
 
 const Home = () => {

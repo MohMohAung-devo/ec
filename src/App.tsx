@@ -7,9 +7,15 @@ import Layout from "./pages/layout";
 import Profile from "./pages/profile/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Cart from "./pages/product/cart/Cart";
+import { createContext, useState } from "react";
+
+const ThemeContext = createContext(null);
 
 function App() {
+  // const [theme, setTheme] = useState("dark");
+
   return (
+    // <ThemeContext.Provider value={theme}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -22,6 +28,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    // </ThemeContext.Provider>
   );
 }
 

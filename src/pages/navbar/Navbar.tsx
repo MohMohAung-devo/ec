@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./Navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
+import { FaThemeco } from "react-icons/fa6";
 
 const Navbar = () => {
+  // const theme = useContext(ThemeContext);
   const [activeColor, setActiveColor] = useState("");
   const location = useLocation();
   const menu = [

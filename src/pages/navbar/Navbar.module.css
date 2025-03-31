@@ -10,6 +10,11 @@
   margin: 0;
 }
 
+.activeTheme{
+  background-color: black;
+  
+}
+
 .Col2 {
   width: 80%;
   margin: auto;
